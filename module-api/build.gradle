@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+bootJar{
+    enabled = true
+}
+
+jar{
+    enabled = false
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':module-core')
+
+    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
