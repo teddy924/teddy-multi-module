@@ -10,14 +10,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 // @Entity: JPA가 엔티티로 인식하여 테이블과 연결될 클래스를 나타냄.
 @Entity
 // @Table: 기본적으로 생성해주는 테이블 이름을 직접 지정.
-//@Table(name= "member")
+@Table(name= "member")
 // getter 메서드를 자동 생성.
 @Getter
 // toString 메서드를 자동생성.
 // exclude를 사용하여 toString에서 제외할 수 있다.
 @ToString(exclude = "password")
 // PK클래스를 따로 생성한 후 참조.
-//@IdClass(MemberPK.class)
+@IdClass(MemberPK.class)
 @NoArgsConstructor
 @EnableJpaAuditing
 public class Member {
@@ -33,7 +33,7 @@ public class Member {
     @Column(name = "password")
     private String password;
 
-//    @Id
+    @Id
     @Column(name = "email")
     private String userEmail;
 
