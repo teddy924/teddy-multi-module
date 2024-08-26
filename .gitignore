@@ -42,3 +42,6 @@ out/
 ### log ###
 *.log
 logs/
+
+## properties ##
+*.properties
