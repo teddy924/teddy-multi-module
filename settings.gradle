@@ -1,4 +1,0 @@
-rootProject.name = 'teddy-multi-module'
-include ':module-core'
-include ':module-api'
-
